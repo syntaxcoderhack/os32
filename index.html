@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 95 - Web Simulation</title>
+    <meta name="description" content="A nostalgic web-based simulation of Windows 95 operating system">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖥️</text></svg>">
+</head>
+<body>
+    <!-- Main Desktop Area -->
+    <div id="desktop">
+        <div class="icon" id="my-computer" onclick="openApp('my-computer')">
+            <img src="./images/comp.png">
+            <div>My Computer</div>
+        </div>
+        <div class="icon" id="my-documents" onclick="openApp('my-documents')">
+            <img src="./images/document.png" alt="My Documents">
+            <div>My Documents</div>
+        </div>
+        <div class="icon" id="recycle-bin" onclick="openApp('recycle-bin')">
+            <img src="./images/recycle.png" alt="Recycle Bin">
+            <div>Recycle Bin</div>
+        </div>
+        <div class="icon" id="internet-explorer" onclick="openApp('internet-explorer')">
+            <img src="./images/recycle.png">
+            <div>Internet Explorer</div>
+        </div>
+        <div class="icon" id="calculator" onclick="openApp('calculator')">
+            <img src="./images/cal.png" alt="Calculator">
+            <div>Calculator</div>
+        </div>
+        <div class="icon" id="notepad" onclick="openApp('notepad')">
+            <img src="./images/notepad.png" alt="Notepad">
+            <div>Notepad</div>
+        </div>
+        <div class="icon" id="paint" onclick="openApp('paint')">
+            <img src="./images/paint.png" alt="Paint">
+            <div>Paint</div>
+        </div>
+
+        <!-- Application Windows -->
+        <div class="window" id="my-computer-window" data-app="my-computer">
+            <div class="window-titlebar">
+                <span>My Computer</span>
+                <div class="window-controls">
+                    <button class="minimize" onclick="minimizeWindow('my-computer-window')">-</button>
+                    <button class="maximize" onclick="maximizeWindow('my-computer-window')">□</button>
+                    <button class="close" onclick="closeWindow('my-computer-window')">×</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="folder-view">
+                    <div class="folder-item" onclick="alert('This would open a drive')">
+                        <img src="./images/document.png" alt="Drive">
+                        <span>(C:) Local Disk</span>
+                    </div>
+                    <div class="folder-item" onclick="alert('Network drives not implemented')">
+                        <img src="./images/document.png" alt="Drive">
+                        <span>(D:) CD-ROM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" id="recycle-bin-window" data-app="recycle-bin">
+            <div class="window-titlebar">
+                <span>Recycle Bin</span>
+                <div class="window-controls">
+                    <button class="minimize" onclick="minimizeWindow('recycle-bin-window')">-</button>
+                    <button class="maximize" onclick="maximizeWindow('recycle-bin-window')">□</button>
+                    <button class="close" onclick="closeWindow('recycle-bin-window')">×</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <p>The Recycle Bin is empty.</p>
+                <p>This is just a simulation!</p>
+            </div>
+        </div>
+
+        <div class="window" id="my-documents-window" data-app="my-documents">
+            <div class="window-titlebar">
+                <span>My Documents</span>
+                <div class="window-controls">
+                    <button class="minimize" onclick="minimizeWindow('my-documents-window')">-</button>
+                    <button class="maximize" onclick="maximizeWindow('my-documents-window')">□</button>
+                    <button class="close" onclick="closeWindow('my-documents-window')">×</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="folder-view">
+                    <div class="folder-item" onclick="alert('Document opening not implemented')">
+                        <img src="./images/resume.png" alt="Document">
+                        <span>Resume.doc</span>
+                    </div>
+                    <div class="folder-item" onclick="alert('Document opening not implemented')">
+                        <img src="./images/letter.png" alt="Document">
+                        <span>Letter.txt</span>
+                    </div>
+                </div>
+                <p>My Documents contains your personal files.</p>
+                <p>This is just a simulation!</p>
+            </div>
+        </div>
+
+        <div class="window" id="internet-explorer-window" data-app="internet-explorer">
+            <div class="window-titlebar">
+                <span>Internet Explorer</span>
+                <div class="window-controls">
+                    <button class="minimize" onclick="minimizeWindow('internet-explorer-window')">-</button>
+                    <button class="maximize" onclick="maximizeWindow('internet-explorer-window')">□</button>
+                    <button class="close" onclick="closeWindow('internet-explorer-window')">×</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="browser-toolbar">
+                    <button>← Back</button>
+                    <button>→ Forward</button>
+                    <button>■ Stop</button>
+                    <button>↻ Refresh</button>
+                    <button>🏠 Home</button>
+                    <input type="text" value="http://www.windows95sim.com" readonly style="flex: 1; margin: 0 4px;">
+                    <button>Go</button>
+                </div>
+                <div class="browser-content">
+                    <h2>Welcome to Internet Explorer</h2>
+                    <p>This is a simulation of the classic Internet Explorer browser.</p>
+                    <p>In the real Windows 95, this would connect you to the World Wide Web!</p>
+                    <p>🌐 The internet was just becoming popular back then...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" id="calculator-window" data-app="calculator">
+            <div class="window-titlebar">
+                <span>Calculator</span>
+                <div class="window-controls">
+                    <button class="minimize" onclick="minimizeWindow('calculator-window')">-</button>
+                    <button class="maximize" onclick="maximizeWindow('calculator-window')">□</button>
+                    <button class="close" onclick="closeWindow('calculator-window')">×</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div id="calc-display">0</div>
+                <div class="calc-buttons">
+                    <button onclick="calcPress('7')">7</button>
+                    <button onclick="calcPress('8')">8</button>
+                    <button onclick="calcPress('9')">9</button>
+                    <button onclick="calcPress('/')">/</button>
+                    <button onclick="calcPress('4')">4</button>
+                    <button onclick="calcPress('5')">5</button>
+                    <button onclick="calcPress('6')">6</button>
+                    <button onclick="calcPress('*')">*</button>
+                    <button onclick="calcPress('1')">1</button>
+                    <button onclick="calcPress('2')">2</button>
+                    <button onclick="calcPress('3')">3</button>
+                    <button onclick="calcPress('-')">-</button>
+                    <button onclick="calcPress('0')">0</button>
+                    <button onclick="calcPress('.')">.</button>
+                    <button onclick="calcPress('=')">=</button>
+                    <button onclick="calcPress('+')">+</button>
+                    <button onclick="calcClear()">C</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" id="notepad-window" data-app="notepad">
+            <div class="window-titlebar">
+                <span>Notepad</span>
+                <div class="window-controls">
+                    <button class="minimize" onclick="minimizeWindow('notepad-window')">-</button>
+                    <button class="maximize" onclick="maximizeWindow('notepad-window')">□</button>
+                    <button class="close" onclick="closeWindow('notepad-window')">×</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <textarea id="notepad-text" placeholder="Welcome to Notepad!
+
+This is a simple text editor simulation."></textarea>
+            </div>
+        </div>
+
+        <div class="window" id="paint-window" data-app="paint">
+            <div class="window-titlebar">
+                <span>Paint</span>
+                <div class="window-controls">
+                    <button class="minimize" onclick="minimizeWindow('paint-window')">-</button>
+                    <button class="maximize" onclick="maximizeWindow('paint-window')">□</button>
+                    <button class="close" onclick="closeWindow('paint-window')">×</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <canvas id="paint-canvas" width="400" height="300"></canvas>
+                <div class="paint-tools">
+                    <button onclick="setPaintTool('brush')">Brush</button>
+                    <button onclick="setPaintTool('eraser')">Eraser</button>
+                    <button onclick="clearCanvas()">Clear</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Taskbar -->
+    <div id="taskbar">
+        <button id="start-button" onclick="toggleStartMenu()">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRkYwMDAwIi8+PHJlY3QgeD0iOCIgeT0iMCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iIzAwRkYwMCIvPjxyZWN0IHg9IjAiIHk9IjgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiMwMDAwRkYiLz48cmVjdCB4PSI4IiB5PSI4IiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRkZGRjAwIi8+PC9zdmc+" alt="Start">
+            Start
+        </button>
+        <div id="taskbar-apps"></div>
+        <div id="taskbar-tray">
+            <div id="taskbar-time">12:00 PM</div>
+        </div>
+    </div>
+
+    <!-- Start Menu -->
+    <div id="start-menu">
+        <div class="start-menu-section">
+            <div class="start-menu-item" onclick="openApp('my-computer')">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMiIgeT0iNyIgd2lkdGg9IjgiIGhlaWdodD0iNyIgZmlsbD0iIzAwMCIgcng9IjEiLz4KPHJlY3QgeD0iNCIgeT0iOSIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI2ZmZmIi8+CjxyZWN0IHg9IjYiIHk9IjExIiB3aWR0aD0iMiIgaGVpZ2h0PSIxIiBmaWxsPSIjMDAwIi8+CjxyZWN0IHg9IjQiIHk9IjEzIiB3aWR0aD0iMiIgaGVpZ2h0PSIxIiBmaWxsPSIjMDAwIi8+CjxyZWN0IHg9IjgiIHk9IjEzIiB3aWR0aD0iMiIgaGVpZ2h0PSIxIiBmaWxsPSIjMDAwIi8+CjxyZWN0IHg9IjIiIHk9IjIiB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMDAwIi8+CjxyZWN0IHg9IjQiIHk9IjQiB3aWR0aD0iMiIgaGVpZ2h0PSIyIiBmaWxsPSIjZmZmIi8+Cjwvc3ZnPgo=" alt="My Computer">
+                My Computer
+            </div>
+            <div class="start-menu-item" onclick="openApp('calculator')">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iNCIgeT0iMiIgd2lkdGg9IjgiIGhlaWdodD0iMTIiIGZpbGw9IiMwMDAiIHJ4PSIxIi8+CjxyZWN0IHg9IjYiIHk9IjQiB3aWR0aD0iNCIgaGVpZ2h0PSIxIiBmaWxsPSIjZmZmIi8+CjxyZWN0IHg9IjgiIHk9IjYiB3aWR0aD0iMiIgaGVpZ2h0PSIxIiBmaWxsPSIjZmZmIi8+CjxyZWN0IHg9IjYiIHk9IjgiB3aWR0aD0iNCIgaGVpZ2h0PSIxIiBmaWxsPSIjZmZmIi8+CjxyZWN0IHg9IjgiIHk9IjEwIiB3aWR0aD0iMiIgaGVpZ2h0PSIxIiBmaWxsPSIjZmZmIi8+CjxyZWN0IHg9IjYiIHk9IjEyIiB3aWR0aD0iNCIgaGVpZ2h0PSIxIiBmaWxsPSIjZmZmIi8+Cjwvc3ZnPgo=" alt="Calculator">
+                Calculator
+            </div>
+            <div class="start-menu-item" onclick="openApp('notepad')">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iNCIgeT0iMiIgd2lkdGg9IjgiIGhlaWdodD0iMTAiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxIi8+CjxyZWN0IHg9IjYiIHk9IjQiB3aWR0aD0iNCIgaGVpZ2h0PSIxIiBmaWxsPSIjMDAwIi8+CjxyZWN0IHg9IjYiIHk9IjYiB3aWR0aD0iNCIgaGVpZ2h0PSIxIiBmaWxsPSIjMDAwIi8+CjxyZWN0IHg9IjYiIHk9IjgiB3aWR0aD0iNCIgaGVpZ2h0PSIxIiBmaWxsPSIjMDAwIi8+CjxyZWN0IHg9IjYiIHk9IjEwIiB3aWR0aD0iNCIgaGVpZ2h0PSIxIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=" alt="Notepad">
+                Notepad
+            </div>
+            <div class="start-menu-item" onclick="openApp('paint')">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iI2ZmZmIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMSIvPgo8cmVjdCB4PSI2IiB5PSI2IiB3aWR0aD0iMiIgaGVpZ2h0PSIyIiBmaWxsPSIjMDAwIi8+CjxyZWN0IHg9IjgiIHk9IjYiB3aWR0aD0iMiIgaGVpZ2h0PSIyIiBmaWxsPSIjZmZmZiIvPgo8cmVjdCB4PSIxMCIgeT0iNiIgd2lkdGg9IjIiIGhlaWdodD0iMiIgZmlsbD0iIzAwMCIvPgo8cmVjdCB4PSI0IiB5PSI4IiB3aWR0aD0iMiIgaGVpZ2h0PSIyIiBmaWxsPSIjMDAwIi8+CjxyZWN0IHg9IjgiIHk9IjgiB3aWR0aD0iMiIgaGVpZ2h0PSIyIiBmaWxsPSIjZmZmZiIvPgo8cmVjdCB4PSIxMCIgeT0iOCIgd2lkdGg9IjIiIGhlaWdodD0iMiIgZmlsbD0iIzAwMCIvPgo8cGF0aCBkPSJNMCA2TDQgM0wIDBaIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=" alt="Paint">
+                Paint
+            </div>
+            <div class="start-menu-item" onclick="openApp('my-documents')">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMiIgeT0iNCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjgiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxIi8+CjxyZWN0IHg9IjQiIHk9IjYiB3aWR0aD0iNiIgaGVpZ2h0PSIyIiBmaWxsPSIjMDAwIi8+CjxyZWN0IHg9IjQiIHk9IjEwIiB3aWR0aD0iNiIgaGVpZ2h0PSIyIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=" alt="My Documents">
+                My Documents
+            </div>
+            <div class="start-menu-item" onclick="openApp('internet-explorer')">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iIzAwMCIvPgo8cmVjdCB4PSI2IiB5PSI2IiB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHg9IjgiIHk9IjYiB3aWR0aD0iMiIgaGVpZ2h0PSIyIiBmaWxsPSIjMDAwIi8+CjxyZWN0IHg9IjEwIiB5PSI2IiB3aWR0aD0iMiIgaGVpZ2h0PSIyIiBmaWxsPSIjZmZmIi8+CjxyZWN0IHg9IjYiIHk9IjEwIiB3aWR0aD0iNCIgaGVpZ2h0PSIyIiBmaWxsPSIjZmZmIi8+CjxyZWN0IHg9IjgiIHk9IjEwIiB3aWR0aD0iMiIgaGVpZ2h0PSIyIiBmaWxsPSIjMDAwIi8+CjxyZWN0IHg9IjEwIiB5PSI4IiB3aWR0aD0iMiIgaGVpZ2h0PSIyIiBmaWxsPSIjZmZmIi8+Cjwvc3ZnPgo=" alt="Internet Explorer">
+                Internet Explorer
+            </div>
+        </div>
+        <div class="start-menu-separator"></div>
+        <div class="start-menu-section">
+            <div class="start-menu-item" onclick="shutdown()">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiIHJ4PSIxIi8+CjxwYXRoIGQ9Ik0yIDhMMCAxMEw0IDEwTDggMTJMMTEgMTBMMTEgOEw4IDZaIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=" alt="Shut Down">
+                Shut Down...
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
